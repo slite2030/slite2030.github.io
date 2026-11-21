@@ -180,8 +180,7 @@
         /* 商品網格 */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 420px));
-            justify-content: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 28px;
         }
         .product-card {
@@ -239,7 +238,7 @@
             text-align: center;
         }
         .product-title {
-            font-size: 1.2rem;
+            font-size: 1.18rem;
             color: #333;
             margin-bottom: 8px;
         }
@@ -440,6 +439,7 @@
             <button class="filter-btn active" onclick="filterProducts('all', this)">全部款式</button>
             <button class="filter-btn" onclick="filterProducts('lace', this)">法式蕾絲</button>
             <button class="filter-btn" onclick="filterProducts('icesilk', this)">絲滑冰絲</button>
+            <button class="filter-btn" onclick="filterProducts('mesh', this)">性感網紗</button>
         </div>
 
         <div class="product-grid">
@@ -448,7 +448,7 @@
             <div class="product-card" data-category="lace icesilk">
                 <div>
                     <div class="product-img-wrap">
-                        <span class="product-tag">新品推薦</span>
+                        <span class="product-tag">法式浪漫</span>
                         <span class="product-code">F-01</span>
                         <img src="images/f-01.jpg" alt="詩蕾 Slite 法式緞面蕾絲鏤空冰絲內褲 F-01" class="product-img">
                     </div>
@@ -470,6 +470,40 @@
                 </div>
                 <div style="text-align:center;">
                     <a href="https://wa.me/85291616269?text=你好！我想查詢「法式緞面蕾絲鏤空冰絲內褲」[編號: F-01]（碼數：M / L，顏色：黑 / 白 / 粉）的售價與現貨。" target="_blank" class="btn-whatsapp">
+                        📲 WhatsApp 查詢 / 訂購
+                    </a>
+                </div>
+            </div>
+
+            <!-- 商品 S-01 -->
+            <div class="product-card" data-category="lace mesh">
+                <div>
+                    <div class="product-img-wrap">
+                        <span class="product-tag">夏季超薄透氣</span>
+                        <span class="product-code">S-01</span>
+                        <img src="images/s-01.jpg" alt="詩蕾 Slite 性感蕾絲中腰迷人透明夏季超薄款少女鏤空網紗透氣內褲 S-01" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">性感蕾絲中腰透明超薄鏤空網紗內褲</h4>
+                        <p class="product-desc">中腰剪裁貼合腰線，細膩蕾絲配微透鏤空網紗，夏季超薄輕盈透氣，迷人又舒適。</p>
+                        <div class="spec-pills">
+                            <span class="spec-pill">碼數：M / L / XL</span>
+                            <span class="spec-pill">顏色：黑 / 白 / 灰 / 膚 / 粉 / 紅</span>
+                        </div>
+                        <div class="color-dots">
+                            <span>色系預覽：</span>
+                            <span class="dot" style="background:#1e1e1e;" title="黑色"></span>
+                            <span class="dot" style="background:#ffffff;" title="白色"></span>
+                            <span class="dot" style="background:#9e9e9e;" title="灰色"></span>
+                            <span class="dot" style="background:#e8ccb8;" title="膚色"></span>
+                            <span class="dot" style="background:#f2c6ce;" title="粉色"></span>
+                            <span class="dot" style="background:#c92a3e;" title="紅色"></span>
+                        </div>
+                        <div class="product-price">歡迎 WhatsApp 查詢售價及多件優惠</div>
+                    </div>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://wa.me/85291616269?text=你好！我想查詢「性感蕾絲中腰透明超薄鏤空網紗內褲」[編號: S-01]（碼數：M / L / XL，顏色：黑 / 白 / 灰 / 膚 / 粉 / 紅）的售價與現貨。" target="_blank" class="btn-whatsapp">
                         📲 WhatsApp 查詢 / 訂購
                     </a>
                 </div>
@@ -504,12 +538,18 @@
                             <td>95 - 103 cm (37.5 - 40.5吋)</td>
                             <td>55 - 65 kg</td>
                         </tr>
+                        <tr>
+                            <td><strong>XL</strong></td>
+                            <td>82 - 90 cm (32.5 - 35.5吋)</td>
+                            <td>104 - 112 cm (41 - 44吋)</td>
+                            <td>65 - 75 kg</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <div class="size-helper-box">
-                <p>不確定自己適合 M 碼還是 L 碼？直接告訴我你的身高體重，我為你一對一推薦！</p>
-                <a href="https://wa.me/85291616269?text=你好！我不確定內褲尺碼，我的身高體重大約是：___，想請你幫我推薦 M 碼或 L 碼。" target="_blank" class="btn-whatsapp">
+                <p>不確定自己適合 M、L 還是 XL 碼？直接告訴我你的身高體重，我為你一對一推薦！</p>
+                <a href="https://wa.me/85291616269?text=你好！我不確定內褲尺碼，我的身高體重大約是：___，想請你幫我推薦 M / L / XL 碼。" target="_blank" class="btn-whatsapp">
                     📏 WhatsApp 專人配對尺碼
                 </a>
             </div>
