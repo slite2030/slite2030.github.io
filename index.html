@@ -227,3 +227,364 @@
             text-align: center;
         }
         .product-title {
+            font-size: 1.15rem;
+            color: #333;
+            margin-bottom: 6px;
+        }
+        .product-desc {
+            font-size: 0.88rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .color-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            display: inline-block;
+        }
+        .product-price {
+            font-size: 1.15rem;
+            color: #b86b77;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .bundle-note {
+            font-size: 0.82rem;
+            color: #8a5a65;
+            margin-bottom: 14px;
+        }
+
+        /* WhatsApp 按鈕 */
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.92rem;
+            transition: background 0.3s;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1eb857;
+        }
+
+        /* 尺碼指南區塊 */
+        .size-section {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 35px 25px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            margin-top: 50px;
+        }
+        .size-table-wrap {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 0.92rem;
+        }
+        th, td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #f0e6e8;
+        }
+        th {
+            background-color: #fdf6f7;
+            color: #8a5a65;
+            font-weight: 600;
+        }
+        .size-helper-box {
+            background: #fdf6f7;
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .size-helper-box p {
+            color: #5a3d43;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        /* 右下角懸浮 WhatsApp 按鈕 */
+        .floating-wa {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            background-color: #25D366;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 13px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.25s;
+        }
+        .floating-wa:hover {
+            transform: scale(1.05);
+            background-color: #1eb857;
+        }
+
+        /* 頁尾 Footer */
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background-color: #ffffff;
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 60px;
+            border-top: 1px solid #f2e9eb;
+        }
+        footer p {
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h2 { font-size: 1.6rem; }
+            .nav-container { justify-content: center; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頁首導覽列 -->
+    <header>
+        <div class="nav-container">
+            <div class="brand">
+                <h1>詩蕾 Slite</h1>
+                <span>法式優雅 · 極致親膚女性內褲</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#products">精選內褲</a>
+                <a href="#size-guide">尺碼指南</a>
+                <a href="https://wa.me/85291616269?text=你好！我想查詢詩蕾%20Slite%20的女性內褲款式及組合優惠。" target="_blank">聯絡我們</a>
+                <!-- 預留英文版切換連結，日後建立 en.html 後只需將 href 改為 "en.html" -->
+                <a href="javascript:void(0)" onclick="alert('English version coming soon! Please contact us via WhatsApp +852 9161 6269 for international inquiries.')" class="lang-badge">EN</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主視覺區塊 -->
+    <section class="hero">
+        <h2>貼近肌膚的溫柔呵護</h2>
+        <p>嚴選純棉抗菌底檔與輕盈無痕面料，零勒痕、不夾臀，給你一整天的自在呼吸感。</p>
+        <a href="#products" class="hero-cta">瀏覽精選內褲</a>
+    </section>
+
+    <!-- 品牌承諾 -->
+    <div class="trust-bar">
+        <div class="trust-grid">
+            <div class="trust-item">
+                <h4>🔒 100% 私隱包裝</h4>
+                <p>全密封保密寄出，外包裝絕無敏感字眼</p>
+            </div>
+            <div class="trust-item">
+                <h4>🌿 純棉透氣底檔</h4>
+                <p>嚴選親膚抗菌面料，呵護女性私密健康</p>
+            </div>
+            <div class="trust-item">
+                <h4>✨ 多件混搭優惠</h4>
+                <p>支持自由配搭款式與顏色，歡迎 WhatsApp 查詢</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 商品列表區塊 -->
+    <div class="container" id="products">
+        <h3 class="section-title">熱銷推薦內褲</h3>
+        <p class="section-subtitle">點擊商品下方按鈕，即可透過 WhatsApp 查詢現貨顏色、尺碼及多件優惠</p>
+
+        <!-- 分類篩選列 -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterProducts('all', this)">全部款式</button>
+            <button class="filter-btn" onclick="filterProducts('seamless', this)">無痕裸感</button>
+            <button class="filter-btn" onclick="filterProducts('lace', this)">法式蕾絲</button>
+            <button class="filter-btn" onclick="filterProducts('cotton', this)">純棉透氣</button>
+        </div>
+
+        <div class="product-grid">
+
+            <!-- 商品 1 -->
+            <div class="product-card" data-category="seamless">
+                <div>
+                    <div class="product-img-wrap">
+                        <span class="product-tag">熱賣 No.1</span>
+                        <img src="https://images.unsplash.com/photo-1596475658428-230f53ea9577?w=500" alt="詩蕾 Slite 雲感無痕冰絲內褲" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">雲感無痕冰絲中腰內褲</h4>
+                        <p class="product-desc">一片式無縫剪裁，穿緊身褲零痕跡｜純棉底檔｜S - XL</p>
+                        <div class="color-dots">
+                            <span>可選色系：</span>
+                            <span class="dot" style="background:#e6cbb8;" title="裸膚色"></span>
+                            <span class="dot" style="background:#f3d6d8;" title="櫻花粉"></span>
+                            <span class="dot" style="background:#2b2b2b;" title="經典黑"></span>
+                            <span class="dot" style="background:#d8dee9;" title="霧霾藍"></span>
+                        </div>
+                        <div class="product-price">HKD $68 / 條</div>
+                        <div class="bundle-note">優惠：任選 3 條 $180 ｜ 5 條 $280</div>
+                    </div>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://wa.me/85291616269?text=你好！我想查詢「雲感無痕冰絲中腰內褲」（尺碼：___ / 顏色：___），請問有現貨嗎？" target="_blank" class="btn-whatsapp">
+                        📲 WhatsApp 查詢 / 訂購
+                    </a>
+                </div>
+            </div>
+
+            <!-- 商品 2 -->
+            <div class="product-card" data-category="lace">
+                <div>
+                    <div class="product-img-wrap">
+                        <span class="product-tag">法式浪漫</span>
+                        <img src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500" alt="詩蕾 Slite 法式柔滑蕾絲三角褲" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">法式柔滑蕾絲半包臀內褲</h4>
+                        <p class="product-desc">親膚不刺癢軟蕾絲，勾勒優雅曲線｜純棉底檔｜S - L</p>
+                        <div class="color-dots">
+                            <span>可選色系：</span>
+                            <span class="dot" style="background:#8a4b58;" title="酒紅色"></span>
+                            <span class="dot" style="background:#2b2b2b;" title="經典黑"></span>
+                            <span class="dot" style="background:#f7f3ee;" title="奶白色"></span>
+                        </div>
+                        <div class="product-price">HKD $88 / 條</div>
+                        <div class="bundle-note">優惠：任選 3 條 $240</div>
+                    </div>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://wa.me/85291616269?text=你好！我想查詢「法式柔滑蕾絲半包臀內褲」（尺碼：___ / 顏色：___），請問有現貨嗎？" target="_blank" class="btn-whatsapp">
+                        📲 WhatsApp 查詢 / 訂購
+                    </a>
+                </div>
+            </div>
+
+            <!-- 商品 3 -->
+            <div class="product-card" data-category="cotton">
+                <div>
+                    <div class="product-img-wrap">
+                        <span class="product-tag">日常舒適</span>
+                        <img src="https://images.unsplash.com/photo-1616150638538-ffb0679a3fc4?w=500" alt="詩蕾 Slite 100%精梳純棉中高腰內褲" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">精梳純棉高彈力透氣內褲</h4>
+                        <p class="product-desc">高含棉量吸濕排汗，溫柔包覆不捲邊｜S - XL</p>
+                        <div class="color-dots">
+                            <span>可選色系：</span>
+                            <span class="dot" style="background:#d9c3c7;" title="豆沙粉"></span>
+                            <span class="dot" style="background:#e8e2d9;" title="燕麥色"></span>
+                            <span class="dot" style="background:#2b2b2b;" title="經典黑"></span>
+                        </div>
+                        <div class="product-price">HKD $65 / 條</div>
+                        <div class="bundle-note">優惠：任選 3 條 $175 ｜ 5 條 $268</div>
+                    </div>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://wa.me/85291616269?text=你好！我想查詢「精梳純棉高彈力透氣內褲」（尺碼：___ / 顏色：___），請問有現貨嗎？" target="_blank" class="btn-whatsapp">
+                        📲 WhatsApp 查詢 / 訂購
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 尺碼指南區塊 -->
+        <section class="size-section" id="size-guide">
+            <h3 class="section-title">內褲尺碼參考指南</h3>
+            <p class="section-subtitle">建議以「臀圍」為主要參考標準，若喜歡寬鬆舒適感可選大一碼</p>
+            <div class="size-table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>尺碼</th>
+                            <th>建議腰圍 (cm / 吋)</th>
+                            <th>建議臀圍 (cm / 吋)</th>
+                            <th>參考體重</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>S</strong></td>
+                            <td>58 - 65 cm (23 - 25.5吋)</td>
+                            <td>80 - 88 cm (31.5 - 34.5吋)</td>
+                            <td>40 - 48 kg</td>
+                        </tr>
+                        <tr>
+                            <td><strong>M</strong></td>
+                            <td>66 - 73 cm (26 - 28.5吋)</td>
+                            <td>89 - 95 cm (35 - 37.5吋)</td>
+                            <td>48 - 55 kg</td>
+                        </tr>
+                        <tr>
+                            <td><strong>L</strong></td>
+                            <td>74 - 81 cm (29 - 32吋)</td>
+                            <td>96 - 102 cm (38 - 40吋)</td>
+                            <td>55 - 63 kg</td>
+                        </tr>
+                        <tr>
+                            <td><strong>XL</strong></td>
+                            <td>82 - 89 cm (32.5 - 35吋)</td>
+                            <td>103 - 110 cm (40.5 - 43吋)</td>
+                            <td>63 - 72 kg</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="size-helper-box">
+                <p>不確定自己適合哪個尺碼？直接告訴我你的身高體重或平時尺碼，我為你一對一推薦！</p>
+                <a href="https://wa.me/85291616269?text=你好！我不確定內褲尺碼，我的身高體重大約是：___，想請你幫我推薦尺碼。" target="_blank" class="btn-whatsapp">
+                    📏 WhatsApp 專人配對尺碼
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- 右下角懸浮 WhatsApp 按鈕 -->
+    <a href="https://wa.me/85291616269?text=你好！我在詩蕾%20Slite%20網站看到你的內褲款式，想查詢一下。" target="_blank" class="floating-wa">
+        💬 WhatsApp 查詢
+    </a>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>© 2026 詩蕾 Slite. All Rights Reserved.</p>
+        <p>100% 私隱包裝出貨 · 香港本地及海外寄送查詢：WhatsApp +852 9161 6269</p>
+    </footer>
+
+    <!-- 分類篩選小程式 -->
+    <script>
+        function filterProducts(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            document.querySelectorAll('.product-card').forEach(card => {
+                const cats = card.getAttribute('data-category');
+                if (category === 'all' || cats.includes(category)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
