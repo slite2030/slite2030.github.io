@@ -182,6 +182,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 28px;
+            align-items: stretch;
         }
         .product-card {
             background: #ffffff;
@@ -191,7 +192,6 @@
             transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             padding-bottom: 24px;
         }
         .product-card:hover {
@@ -206,6 +206,7 @@
             width: 100%;
             height: 360px;
             background-color: #f2ece9;
+            flex-shrink: 0;
         }
         .product-img {
             width: 100%;
@@ -233,43 +234,67 @@
             padding: 3px 9px;
             border-radius: 10px;
         }
+
+        /* 統一對齊的卡片內容區 */
         .product-info {
-            padding: 18px 22px 0;
+            padding: 20px 22px 0;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
         .product-title {
-            font-size: 1.18rem;
+            font-size: 1.15rem;
             color: #333;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            min-height: 3.4em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.45;
         }
         .product-desc {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: #666;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+            min-height: 4.4em;
+            line-height: 1.55;
         }
-        .spec-pills {
+
+        /* 統一垂直排列的規格區塊 */
+        .spec-list {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
             gap: 8px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
         .spec-pill {
             background: #fdf6f7;
             border: 1px solid #ead6da;
             color: #6b4c53;
             font-size: 0.82rem;
-            padding: 3px 10px;
-            border-radius: 12px;
+            padding: 4px 14px;
+            border-radius: 14px;
+            width: 88%;
+            max-width: 260px;
+        }
+
+        /* 固定置底對齊的底部區域 */
+        .product-bottom {
+            margin-top: auto;
+            padding: 0 22px;
+            text-align: center;
         }
         .color-dots {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 8px;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             font-size: 0.85rem;
             color: #666;
+            height: 24px;
         }
         .dot {
             width: 15px;
@@ -279,7 +304,7 @@
             display: inline-block;
         }
         .product-price {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #b86b77;
             font-weight: bold;
             margin-bottom: 14px;
@@ -447,29 +472,27 @@
 
             <!-- 商品 F-01 -->
             <div class="product-card" data-category="lace icesilk">
-                <div>
-                    <div class="product-img-wrap">
-                        <span class="product-tag">法式浪漫</span>
-                        <span class="product-code">F-01</span>
-                        <img src="images/f-01.jpg" alt="詩蕾 Slite 法式緞面蕾絲鏤空冰絲內褲 F-01" class="product-img">
-                    </div>
-                    <div class="product-info">
-                        <h4 class="product-title">法式緞面蕾絲鏤空冰絲內褲</h4>
-                        <p class="product-desc">寬版精緻花朵蕾絲腰邊配雙蝴蝶結點綴，絲滑冰絲緞面親膚透氣，輕盈無感貼合。</p>
-                        <div class="spec-pills">
-                            <span class="spec-pill">碼數：M碼 / L碼</span>
-                            <span class="spec-pill">顏色：黑色 / 白色 / 粉色</span>
-                        </div>
-                        <div class="color-dots">
-                            <span>色系預覽：</span>
-                            <span class="dot" style="background:#1e1e1e;" title="黑色"></span>
-                            <span class="dot" style="background:#ffffff;" title="白色"></span>
-                            <span class="dot" style="background:#f2c6ce;" title="粉色"></span>
-                        </div>
-                        <div class="product-price">歡迎 WhatsApp 查詢售價及多件優惠</div>
+                <div class="product-img-wrap">
+                    <span class="product-tag">法式浪漫</span>
+                    <span class="product-code">F-01</span>
+                    <img src="images/f-01.jpg" alt="詩蕾 Slite 法式緞面蕾絲鏤空冰絲內褲 F-01" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h4 class="product-title">法式緞面蕾絲鏤空冰絲內褲</h4>
+                    <p class="product-desc">寬版精緻花朵蕾絲腰邊配雙蝴蝶結點綴，絲滑冰絲緞面親膚透氣，輕盈無感貼合。</p>
+                    <div class="spec-list">
+                        <div class="spec-pill">碼數：M / L</div>
+                        <div class="spec-pill">顏色：黑 / 白 / 粉</div>
                     </div>
                 </div>
-                <div style="text-align:center;">
+                <div class="product-bottom">
+                    <div class="color-dots">
+                        <span>色系預覽：</span>
+                        <span class="dot" style="background:#1e1e1e;" title="黑色"></span>
+                        <span class="dot" style="background:#ffffff;" title="白色"></span>
+                        <span class="dot" style="background:#f2c6ce;" title="粉色"></span>
+                    </div>
+                    <div class="product-price">歡迎 WhatsApp 查詢售價及多件優惠</div>
                     <a href="https://wa.me/85291616269?text=你好！我想查詢「法式緞面蕾絲鏤空冰絲內褲」[編號: F-01]（碼數：M / L，顏色：黑 / 白 / 粉）的售價與現貨。" target="_blank" class="btn-whatsapp">
                         📲 WhatsApp 查詢 / 訂購
                     </a>
@@ -478,32 +501,30 @@
 
             <!-- 商品 S-01 -->
             <div class="product-card" data-category="lace mesh">
-                <div>
-                    <div class="product-img-wrap">
-                        <span class="product-tag">夏季超薄透氣</span>
-                        <span class="product-code">S-01</span>
-                        <img src="images/s-01.jpg" alt="詩蕾 Slite 性感蕾絲中腰迷人透明夏季超薄款少女鏤空網紗透氣內褲 S-01" class="product-img">
-                    </div>
-                    <div class="product-info">
-                        <h4 class="product-title">性感蕾絲中腰透明超薄鏤空網紗內褲</h4>
-                        <p class="product-desc">中腰剪裁貼合腰線，細膩蕾絲配微透鏤空網紗，夏季超薄輕盈透氣，迷人又舒適。</p>
-                        <div class="spec-pills">
-                            <span class="spec-pill">碼數：M / L / XL</span>
-                            <span class="spec-pill">顏色：黑 / 白 / 灰 / 膚 / 粉 / 紅</span>
-                        </div>
-                        <div class="color-dots">
-                            <span>色系預覽：</span>
-                            <span class="dot" style="background:#1e1e1e;" title="黑色"></span>
-                            <span class="dot" style="background:#ffffff;" title="白色"></span>
-                            <span class="dot" style="background:#9e9e9e;" title="灰色"></span>
-                            <span class="dot" style="background:#e8ccb8;" title="膚色"></span>
-                            <span class="dot" style="background:#f2c6ce;" title="粉色"></span>
-                            <span class="dot" style="background:#c92a3e;" title="紅色"></span>
-                        </div>
-                        <div class="product-price">歡迎 WhatsApp 查詢售價及多件優惠</div>
+                <div class="product-img-wrap">
+                    <span class="product-tag">夏季超薄透氣</span>
+                    <span class="product-code">S-01</span>
+                    <img src="images/s-01.jpg" alt="詩蕾 Slite 性感蕾絲中腰透明超薄鏤空網紗內褲 S-01" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h4 class="product-title">性感蕾絲中腰透明超薄<br>鏤空網紗內褲</h4>
+                    <p class="product-desc">中腰剪裁貼合腰線，細膩蕾絲配微透鏤空網紗，夏季超薄輕盈透氣，迷人又舒適。</p>
+                    <div class="spec-list">
+                        <div class="spec-pill">碼數：M / L / XL</div>
+                        <div class="spec-pill">顏色：黑 / 白 / 灰 / 膚 / 粉 / 紅</div>
                     </div>
                 </div>
-                <div style="text-align:center;">
+                <div class="product-bottom">
+                    <div class="color-dots">
+                        <span>色系預覽：</span>
+                        <span class="dot" style="background:#1e1e1e;" title="黑色"></span>
+                        <span class="dot" style="background:#ffffff;" title="白色"></span>
+                        <span class="dot" style="background:#9e9e9e;" title="灰色"></span>
+                        <span class="dot" style="background:#e8ccb8;" title="膚色"></span>
+                        <span class="dot" style="background:#f2c6ce;" title="粉色"></span>
+                        <span class="dot" style="background:#c92a3e;" title="紅色"></span>
+                    </div>
+                    <div class="product-price">歡迎 WhatsApp 查詢售價及多件優惠</div>
                     <a href="https://wa.me/85291616269?text=你好！我想查詢「性感蕾絲中腰透明超薄鏤空網紗內褲」[編號: S-01]（碼數：M / L / XL，顏色：黑 / 白 / 灰 / 膚 / 粉 / 紅）的售價與現貨。" target="_blank" class="btn-whatsapp">
                         📲 WhatsApp 查詢 / 訂購
                     </a>
@@ -512,31 +533,29 @@
 
             <!-- 商品 J-01 -->
             <div class="product-card" data-category="lace mesh japanese">
-                <div>
-                    <div class="product-img-wrap">
-                        <span class="product-tag">日系甜美 · 純棉襠</span>
-                        <span class="product-code">J-01</span>
-                        <img src="images/j-01.jpg" alt="詩蕾 Slite 日系性感蕾絲綁帶蝴蝶結交叉中腰透氣網紗純棉襠內褲 J-01" class="product-img">
-                    </div>
-                    <div class="product-info">
-                        <h4 class="product-title">日系性感蕾絲綁帶蝴蝶結交叉中腰純棉襠內褲</h4>
-                        <p class="product-desc">日系交叉綁帶與蝴蝶結細節，輕透網紗配純棉親膚底檔，兼顧甜美性感與全天候透氣。</p>
-                        <div class="spec-pills">
-                            <span class="spec-pill">碼數：M / L / XL</span>
-                            <span class="spec-pill">顏色：藍 / 磚紅 / 杏 / 白 / 黑</span>
-                        </div>
-                        <div class="color-dots">
-                            <span>色系預覽：</span>
-                            <span class="dot" style="background:#6c8eb5;" title="藍色"></span>
-                            <span class="dot" style="background:#a64b43;" title="磚紅"></span>
-                            <span class="dot" style="background:#ead6be;" title="杏色"></span>
-                            <span class="dot" style="background:#ffffff;" title="白色"></span>
-                            <span class="dot" style="background:#1e1e1e;" title="黑色"></span>
-                        </div>
-                        <div class="product-price">歡迎 WhatsApp 查詢售價及多件優惠</div>
+                <div class="product-img-wrap">
+                    <span class="product-tag">日系甜美 · 純棉襠</span>
+                    <span class="product-code">J-01</span>
+                    <img src="images/j-01.jpg" alt="詩蕾 Slite 日系性感蕾絲綁帶蝴蝶結交叉中腰純棉襠內褲 J-01" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h4 class="product-title">日系性感蕾絲綁帶蝴蝶結<br>交叉中腰純棉襠內褲</h4>
+                    <p class="product-desc">日系交叉綁帶與蝴蝶結細節，輕透網紗配純棉親膚底檔，兼顧甜美性感與全天候透氣。</p>
+                    <div class="spec-list">
+                        <div class="spec-pill">碼數：M / L / XL</div>
+                        <div class="spec-pill">顏色：藍 / 磚紅 / 杏 / 白 / 黑</div>
                     </div>
                 </div>
-                <div style="text-align:center;">
+                <div class="product-bottom">
+                    <div class="color-dots">
+                        <span>色系預覽：</span>
+                        <span class="dot" style="background:#6c8eb5;" title="藍色"></span>
+                        <span class="dot" style="background:#a64b43;" title="磚紅"></span>
+                        <span class="dot" style="background:#ead6be;" title="杏色"></span>
+                        <span class="dot" style="background:#ffffff;" title="白色"></span>
+                        <span class="dot" style="background:#1e1e1e;" title="黑色"></span>
+                    </div>
+                    <div class="product-price">歡迎 WhatsApp 查詢售價及多件優惠</div>
                     <a href="https://wa.me/85291616269?text=你好！我想查詢「日系性感蕾絲綁帶蝴蝶結交叉中腰純棉襠內褲」[編號: J-01]（碼數：M / L / XL，顏色：藍 / 磚紅 / 杏 / 白 / 黑）的售價與現貨。" target="_blank" class="btn-whatsapp">
                         📲 WhatsApp 查詢 / 訂購
                     </a>
